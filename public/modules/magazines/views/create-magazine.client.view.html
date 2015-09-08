@@ -1,0 +1,76 @@
+<section data-ng-controller="MagazinesController">
+    <div class="page-header">
+        <h1>New Magazine</h1>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="create()" novalidate>
+            <fieldset>
+                <div class="form-group">
+                    <label class="control-label" for="name">Name</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Name" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+				<label class="control-label" for="summary">Summary</label>
+                    <div class="controls">
+                        <textarea data-ng-model="summary" id="summary" class="form-control" placeholder="Summary"></textarea>
+			        </div>
+                </div>
+               <!-- ------------------------------------------------------------------------
+                <div class="form-group">
+				<label for="imageURL">Magazine Cover</label>
+				
+					<img ng-src="{{imageURL}}" width="200px">
+					<input id="imageURL" type="file" class="btn"
+						   ng-file-select="onFileSelect($files, 'magazine/imageURL', magazineImageUpload); uploadingImage = true; imageURL = $files">
+
+					<div ng-show="uploadingImage" ng-repeat="file in imageURL">
+						<div class="progress">
+							<div class="progress-bar" role="progressbar" style="width:{{file.progress}}%;">
+								{{file.name}} : {{file.progress}}
+							</div>
+						</div>
+					</div>
+				</div>
+                ----------------------------------------------------------------------------->
+                
+                <div class="form-group">
+                    <label class="control-label" for="name">Year Number</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="yearNumber" id="yearNumber" class="form-control" placeholder="Year Number">
+                    </div>
+                </div>
+                
+                  <div class="form-group">
+                    <label class="control-label" for="name">Year Quarter</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="yearQuarter" id="yearQuarter" class="form-control" placeholder="Year Quarter">
+                    </div>
+                </div>
+                
+                  <div class="form-group">
+                    <label class="control-label" for="name">Publish Date</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="publishDate" id="publishDate" class="form-control" placeholder="Publish Date">
+                    </div>
+                </div>
+                
+                 <div class="form-group">
+                    <label class="control-label" for="name">Price</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="price" id="price" class="form-control" placeholder="Price">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-default">
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div>
+</section>
