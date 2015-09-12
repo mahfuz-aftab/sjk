@@ -81,24 +81,28 @@
     </div>
 </div>
 
-    <div class="row">
-            <div ng-hide="addingSalePoints" class="col-sm-10 col-md-10 center grey-back" ng-repeat="salePoint in magazine.salePoints">
-                <label class="control-label">Store Name</label><p> {{salePoint.storeName}}</p><br>
+    
+            <div ng-hide="addingSalePoints" class="grey-back" ng-repeat="salePoint in magazine.salePoints">
+        <div class="row">
+            <div class ="col-sm-1 col-md-1"></div>
+            
+            <div class ="col-sm-4 col-md-4">
+                <label class="control-label">Store Name</label><p> {{salePoint.storeName}}</p>
+           </div>
            
+           <div class ="col-sm-6 col-md-6">
                 <label class="control-label">Store Location</label><p> {{salePoint.storeLocation}}</p>
-                <div>
+            </div>
+               <div class ="col-sm-1 col-md-1">
                     <button type="button" data-ng-show="authentication.user._id == magazine.user._id" class="btn-danger" id="trashButton" ng-click="removeSalePoints(salePoint)">
                         <i class="glyphicon glyphicon-trash"></i>
                     </button>
                 </div>
-   
             </div>
-            <div class="center" data-ng-hide="magazine.salePoints.length == 0"></div>
-    </div>
+            </div>
+          <!--  <div class="center" data-ng-hide="magazine.salePoints.length == 0"></div>-->
 
-    </br>
-            
-                 <div class="form-group">
+            <div class="form-group">
                     <label class="control-label" for="name">Price</label>
                     <div class="controls">
                         <input type="text" data-ng-model="magazine.price" id="price" class="form-control" placeholder="Price">

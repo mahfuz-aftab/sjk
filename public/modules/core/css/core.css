@@ -102,5 +102,10 @@
     width: 100%;
     font-family: "Open Sans", sans-serif;
     color: #FFF;
-    
+}
+
+.grey-back {
+    background-color: rgba(153, 153, 153, 0.3);
+    padding: 10px;
+    border-radius: 0.4em;
 }
