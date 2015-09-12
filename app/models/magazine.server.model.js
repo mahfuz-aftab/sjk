@@ -23,14 +23,21 @@ var MagazineSchema = new Schema({
 		trim: true
 	},
 
-	imageURL: {
+/*	imageURL: {
         type: String,
         default: ['https://s3-us-west-2.amazonaws.com/suc-web/default/default_img.png'],
         //required: 'Please Upload Article Image',
         trim: true
         },
+*/        
+        rImageUrl: {
+		type: String,
+		default: '',
+	//	required: 'Please fill Image URL',
+		trim: true
+	},
         
-    salePoints: {
+    salePoints: [{
          storeName: {
             type: String,
             default: '',
@@ -41,15 +48,15 @@ var MagazineSchema = new Schema({
             default: '',
             trim: true
         }
-        },
+        }],
         
-    yearNumber:{
+        yearQuarter:{
     	type: String,
         default: '',
         trim: true
     },
-    
-    yearQuarter:{
+        
+    yearNumber:{
     	type: String,
         default: '',
         trim: true

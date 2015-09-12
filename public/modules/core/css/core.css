@@ -23,3 +23,84 @@
     font-size: 100%;
     margin:20px 0;
 }*/
+
+.listGroupMagazine {
+    max-width: 95%;
+    margin: auto;
+    margin-bottom: 3em;
+    
+}
+
+.listGroupMagazine img {
+    
+    max-height:250px;
+    max-width: 200px;
+}
+
+.listGroupMagazine h3 {
+  font-size: 35px;
+  margin: 15px 0 5px 0;
+  font-family: "Open Sans", sans-serif;
+  color:#000;
+  text-align:center;
+  font-weight: bold;
+  line-height: 1.2em;
+
+}
+
+.magazinePublishDetails{
+    font-size: 14px;
+    background-color: rgba(133, 133, 133, 1);
+    font-weight: bold;
+    display: table;
+    width: 100%;
+    font-family: "Open Sans", sans-serif;
+    color: #FFF;
+}
+
+.magazinePublishDetails p {
+     padding-left:10px;
+     padding-top:10px;
+     text-align: center;
+
+}
+
+.magazineSummary{
+    white-space: pre-wrap;
+   font-weight:bold;
+    line-height: 15px;
+    font-size: 15px;
+    
+}
+
+/*************************************** ListView CSS Ends **********************************************/
+
+.magazineSingleView img{
+    
+    max-height:550px; 
+    max-width: 400px;
+    padding-top: 3em;
+}
+
+.magazineSingleView h2{
+
+  font-size: 50px;
+  margin: 35px 0 5px 0;
+  font-family: "Open Sans", sans-serif;
+  color:#000;
+  text-align:center;
+  font-weight: bold;
+  line-height: 1.2em;
+}
+
+.magazineStoreDetails{
+    
+    font-size: 14px;
+    background-color: rgba(133, 133, 133, 1);
+    font-weight: bold;
+    display: table;
+    width: 100%;
+    font-family: "Open Sans", sans-serif;
+    color: #FFF;
+    
+}

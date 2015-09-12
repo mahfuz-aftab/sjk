@@ -31,17 +31,17 @@ var ArticleSchema = new Schema({
 		default: '',
 		trim: true
 	},
-	imageURL: {
+/*	imageURL: {
 		type: String,
 		default: ['https://s3-us-west-2.amazonaws.com/suc-web/default/default_img.png'],
 		//required: 'Please Upload Article Image',
 		trim: true
-	},
+	},*/
 	
 	rImageUrl: {
 		type: String,
 		default: '',
-		required: 'Please fill Restaurant logo',
+		//required: 'Please fill Image URL',
 		trim: true
 	},
 

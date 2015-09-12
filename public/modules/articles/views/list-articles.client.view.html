@@ -1,9 +1,24 @@
 <section data-ng-controller="ArticlesController" data-ng-init="find()">
-	<div class="page-header">
-		<h1>Articles</h1>
-	</div>
+	        <div class="page-header row">
+            <div class="col-sm-8 col-md-8">
+                <h1>Articles</h1>
+            </div>
+            
+                <div class="col-sm-4 col-md-4 input-group pull-right">
+                    <input type="text" class="form-control" ng-model="query" placeholder="Search">
+                    <span class="input-group-btn">
+                 <button ng-click="search()" class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+               </span>
+            </div>
+            
+        </div>
 	<div class="list-group">
-		<a data-ng-repeat="article in articles" data-ng-href="#!/articles/{{article._id}}" class="list-group-item">
+		<a data-ng-repeat="article in articles | filter : query" data-ng-href="#!/articles/{{article._id}}" class="list-group-item">
+		
+		  	<div>
+                <img ng-src="{{article.rImageURL}}">
+            </div>
+		
 			<small class="list-group-item-text">
 				Posted on
 				<span data-ng-bind="article.created | date:'mediumDate'"></span>
@@ -18,6 +33,3 @@
 		No articles yet, why don't you <a href="/#!/articles/create">create one</a>?
 	</div>
 </section>
-
---------------------------------------------------------------------------
-

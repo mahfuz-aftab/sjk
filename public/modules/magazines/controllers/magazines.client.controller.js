@@ -58,25 +58,42 @@ angular.module('magazines').controller('MagazinesController', ['$scope', '$state
 		};
 		
 		     //Add Sale Points in Edit Page
-        $scope.salePoints = function() {
+        $scope.addSalePoints = function() {
             var salePoint = {
                 'storeName': $scope.storeName,
                 'storeLocation': $scope.storeLocation
             };
+            
+            //$scope.magazine.salePoints.indexOf(salePoint);
             $scope.magazine.salePoints.push(salePoint);
-            //clear fields
+           	
+           	$scope.storeName='';
+            $scope.storeLocation='';
+           
+            if (salePoint.length>0) {
+            	
+            	$scope.addingSalePoints = true;
+            }
+            
+            else {
+        	$scope.addingSalePoints = false;
+        }
+            
+           
+        };
+        
+         //clear fields
 
             $scope.storeName='';
             $scope.storeLocation='';
-        };
-
+        
         $scope.removeSalePoints = function(salePoint) {
-            //var magazine = $scope.magazine;
-            var index = $scope.magazine.salePoints.indexOf(salePoint);
+            var magazine = $scope.magazine;
+            var index = magazine.salePoints.indexOf(salePoint);
 
              $scope.magazine.salePoints.splice(index, 1);
         };
-
+        
 		// Find a list of Magazines
 		$scope.find = function() {
 			$scope.magazines = Magazines.query();

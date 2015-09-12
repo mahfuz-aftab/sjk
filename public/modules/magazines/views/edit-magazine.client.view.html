@@ -18,7 +18,7 @@
                         <textarea data-ng-model="magazine.summary" id="summary" class="form-control" placeholder="Summary"></textarea>
 			        </div>
                 </div>
-                ------------------------------------------------------------------------
+        <!--        ------------------------------------------------------------------------
                 <div class="form-group">
 				<label for="imageURL">Magazine Cover</label>
 				
@@ -34,13 +34,13 @@
 						</div>
 					</div>
 				</div>
-                ---------------------------------------------------------------------------
+                --------------------------------------------------------------------------- -->
                 
-                <div class="form-group">
-                    <label class="control-label" for="name">Year Number</label>
+                  <div class="form-group">
+				<label class="control-label" for="rImageUrl">Magazine Cover Image</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="magazine.yearNumber" id="yearNumber" class="form-control" placeholder="Year Number">
-                    </div>
+                        <input name="rImageUrl" type="text" data-ng-model="magazine.rImageUrl" id="rImageUrl" class="form-control" placeholder="Article Image" required>
+			        </div>
                 </div>
                 
                 <div class="form-group">
@@ -50,13 +50,54 @@
                     </div>
                 </div>
                 
+                 <div class="form-group">
+                    <label class="control-label" for="name">Year Number</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="magazine.yearNumber" id="yearNumber" class="form-control" placeholder="Year Number">
+                    </div>
+                </div>
+                
                   <div class="form-group">
                     <label class="control-label" for="name">Publish Date</label>
                     <div class="controls">
                         <input type="text" data-ng-model="magazine.publishDate" id="publishDate" class="form-control" placeholder="Publish Date">
                     </div>
                 </div>
-                
+
+                <label class="control-label">Sale Points</label>
+                </br>
+      <div class="form-group" >
+    <div class="controls" for="storeName">
+        <input type="text" data-ng-model="storeName" id="storeName" class="form-control" placeholder="Store Name" class="ng-pristine ng-valid">
+    </div>
+    </br>
+    <div class="controls" for="storeLocation">
+        <input type="text" data-ng-model="storeLocation" id="storeLocation" class="form-control" placeholder="Store Location" class="ng-pristine ng-valid">
+    </div></br>
+    <div class="pull-right">
+        <button type="button" class="btn-success" ng-click='addSalePoints()'>
+            <i class="glyphicon glyphicon-ok"></i>
+        </button>
+    </div>
+</div>
+
+    <div class="row">
+            <div ng-hide="addingSalePoints" class="col-sm-10 col-md-10 center grey-back" ng-repeat="salePoint in magazine.salePoints">
+                <label class="control-label">Store Name</label><p> {{salePoint.storeName}}</p><br>
+           
+                <label class="control-label">Store Location</label><p> {{salePoint.storeLocation}}</p>
+                <div>
+                    <button type="button" data-ng-show="authentication.user._id == magazine.user._id" class="btn-danger" id="trashButton" ng-click="removeSalePoints(salePoint)">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </button>
+                </div>
+   
+            </div>
+            <div class="center" data-ng-hide="magazine.salePoints.length == 0"></div>
+    </div>
+
+    </br>
+            
                  <div class="form-group">
                     <label class="control-label" for="name">Price</label>
                     <div class="controls">

@@ -1,7 +1,9 @@
 <section data-ng-controller="MagazinesController" data-ng-init="findOne()">
-	<div class="page-header">
+	
+<!--	<div class="page-header">
 		<h1 data-ng-bind="magazine.name"></h1>
-	</div>
+	</div>-->
+	
 	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == magazine.user._id))">
 		<a class="btn btn-primary" href="/#!/magazines/{{magazine._id}}/edit">
 			<i class="glyphicon glyphicon-edit"></i>
@@ -10,12 +12,27 @@
 			<i class="glyphicon glyphicon-trash"></i>
 		</a>
 	</div>
-	<small>
-		<em class="text-muted">
-			Posted on
-			<span data-ng-bind="magazine.created | date:'mediumDate'"></span>
-			by
-			<span data-ng-bind="magazine.user.displayName"></span>
-		</em>
-	</small>
+	<div class="magazineSingleView">
+	 <div class="row">
+                    <div class="col-sm-4 col-md-4">
+			         	<img ng-src="{{magazine.rImageUrl}}"></img>
+		        	</div>
+		        	<div class="col-sm-1 col-md-1"></div>
+		        	<div class="col-sm-7 col-md-7">
+                        <h2 data-ng-bind="magazine.name"></h2> 
+                        <div class="magazinePublishDetails">
+                            <p class="pull-left" data-ng-bind="magazine.yearQuarter"></p>
+                            <p class="pull-left" data-ng-bind="magazine.yearNumber"></p>
+                            <p class="pull-right" style="padding-right:10px; color: #000;" data-ng-bind="magazine.publishDate"></p>
+                        </div>
+                            <p style="padding-top:20px; text-align:center; line-height: 1.8em;"><span class="magazineSummary" ng-bind-html="magazine.summary"></span></p>
+                    </div>
+                </div>
+    </div>
+   
+    <div class="magazineStoreDetails">
+     <div class="row">
+       <div class="col-sm-12 col-md-12">
+   	</div>
+   	</div>
 </section>
