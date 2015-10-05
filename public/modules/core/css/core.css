@@ -15,6 +15,36 @@
 }
 
 
+
+
+.inner-addon {
+	position: relative;
+	padding-top: 16px;
+}
+
+.inner-addon .glyphicon {
+    position: absolute;
+/*	padding: 10px;*/
+	pointer-events: none;
+}
+
+.right-addon .glyphicon {
+	right: 10px;
+	padding-top:18px;
+}
+
+.headerSearchBox {
+    background-color: #DADADA;
+    height:20px;
+}
+
+.navbar-inverse{
+    background-image: linear-gradient(to bottom, #E3120B 0%, #222 100%);
+    color: #FFF;
+}
+
+/*************************************** Header CSS Ends **********************************************/
+
 /*.ta{
     min-height: 300px;
     height: auto;
@@ -23,6 +53,7 @@
     font-size: 100%;
     margin:20px 0;
 }*/
+
 
 .listGroupMagazine {
     max-width: 95%;
@@ -83,7 +114,7 @@
 }
 
 .magazineSingleView h2{
-
+    
   font-size: 50px;
   margin: 35px 0 5px 0;
   font-family: "Open Sans", sans-serif;
@@ -91,6 +122,7 @@
   text-align:center;
   font-weight: bold;
   line-height: 1.2em;
+
 }
 
 .magazineStoreDetails{
