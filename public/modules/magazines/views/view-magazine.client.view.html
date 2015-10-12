@@ -29,12 +29,21 @@
                     </div>
                 </div>
     </div>
-   
+      </br>
+
     <div class="magazineStoreDetails">
      <div class="row">
-       <div class="col-sm-12 col-md-12">
-       	
-       	{{magazine.salePoints}}
+     	<div class="col-sm-6 col-md-6">
+     		<h3>আজই সংগ্রহ করুন</h3>
+     	</div>
+     	<div class="col-sm-6 col-md-6">
+     	 <div ng-repeat= "salePoint in magazine.salePoints">
+     	 	 <span class="pull-right" style="color: #000;">{{salePoint.storeLocation}}</span> <span class="pull-right" style=" padding-right:10px;">{{salePoint.storeName}}</span>
+     	 </br>
+     	 </div>
+     	 
    	</div>
    	</div>
+   	</div>
+   </br>
 </section>

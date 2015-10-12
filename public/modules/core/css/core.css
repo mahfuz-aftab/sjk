@@ -14,8 +14,9 @@
 	border-color: #78FA89;
 }
 
-
-
+.navbar-fixed-top{
+    position:relative;
+}
 
 .inner-addon {
 	position: relative;
@@ -44,6 +45,71 @@
 }
 
 /*************************************** Header CSS Ends **********************************************/
+.slide{
+        border-radius: 1em;
+        
+        height: 500px;
+    }
+    
+.sliderPhoto {
+	margin: auto;
+	width: 100%;
+	max-height: 515px;
+    }
+    
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+.right carousel-control {
+    position: none;
+}
+/*.glyphicon-chevron-right glyphicon-chevron-left {
+    position:none;
+}
+*/
+/*************************************** HomePageView CSS Ends **********************************************/
+
+
+.navbar-footer{
+    background-image: linear-gradient(to top, #E3120B 0%, #222 100%);
+    color: #FFF;
+}
+
+.socials{
+	/*padding-left: 35px;*/
+	padding-top: 5px;
+}
+
+.socials a {
+	list-style: none;
+	margin-right: 5px;
+	height: 43px;
+	width: 43px;
+	display: inline-block;
+	color: #AF9A94;
+	background: none;
+	text-align: center;
+	line-height: 42px;
+	font-size: 17px;
+	border: 1px solid #AF9A94;
+	-webkit-border-radius: 500px;
+	-moz-border-radius: 500px;
+	border-radius: 500px;
+
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	-o-transition: all .5s;
+	-ms-transition: all .5s;
+	transition: all .5s;
+}
+
+.socials a:hover {
+	border-color: #F94B4B;
+	color: #fff!important;
+}
+
+/*************************************** footer CSS Ends **********************************************/
 
 /*.ta{
     min-height: 300px;
@@ -126,14 +192,20 @@
 }
 
 .magazineStoreDetails{
-    
-    font-size: 14px;
+    padding:5px;
+    font-size: 18px;
     background-color: rgba(133, 133, 133, 1);
     font-weight: bold;
     display: table;
     width: 100%;
     font-family: "Open Sans", sans-serif;
     color: #FFF;
+}
+
+.magazineStoreDetails h3{
+     color: #00062D; 
+     font-size: 45px; 
+     font-weight: bold;
 }
 
 .grey-back {
