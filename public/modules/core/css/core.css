@@ -14,6 +14,10 @@
 	border-color: #78FA89;
 }
 
+.center {
+    text-align: center;
+}
+
 .navbar-fixed-top{
     position:relative;
 }
@@ -213,3 +217,33 @@
     padding: 10px;
     border-radius: 0.4em;
 }
+
+/*************************************** MagazineView CSS Ends **********************************************/
+.articleCoverImage {
+    background: #DADADA;
+    margin-top: 20px;
+ 
+    border-radius: 15px;
+    /*border-top-right-radius: 15px;*/
+}
+
+.articleCoverImage img {
+    max-width: 25em;
+    height: auto;
+    border-radius: 15px;
+    padding: 1em 0;
+    
+}
+
+.articleContent {
+    margin-top: 20px;
+    white-space: pre-wrap;
+}
+
+.articleContent a{
+    color: #BE1510;
+}
+
+
+
+/*************************************** ArticleView CSS Ends **********************************************/
