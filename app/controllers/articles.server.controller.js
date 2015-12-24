@@ -83,6 +83,26 @@ exports.list = function(req, res) {
 	});
 };
 
+exports.articleByMagazine = function(req, res) {
+
+  Article.aggregate(
+    [{
+        "$group": {
+          "_id": "$magazine",
+          "articleTitle": {"$push": "$title"}
+        }
+    }],
+    function(err, results) {
+      if (err) throw err;
+
+      res.send(results);
+    }
+
+
+  )
+
+};
+
 /**
  * Article middleware
  */

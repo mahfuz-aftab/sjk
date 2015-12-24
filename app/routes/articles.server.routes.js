@@ -17,6 +17,10 @@ module.exports = function(app) {
 		.put(users.requiresLogin, articles.hasAuthorization, articles.update)
 		.delete(users.requiresLogin, articles.hasAuthorization, articles.delete);
 
+
+	app.route('/a')
+	.get(articles.articleByMagazine);
+
 	// Finish by binding the article middleware
 	app.param('articleId', articles.articleByID);
 };

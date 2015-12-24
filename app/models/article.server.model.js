@@ -49,9 +49,7 @@ var ArticleSchema = new Schema({
 		type: Schema.ObjectId,
 		ref: 'Magazine'
 	},
-
-
-
+	
 	user: {
 		type: Schema.ObjectId,
 		ref: 'User'

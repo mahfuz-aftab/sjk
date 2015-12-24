@@ -13,7 +13,7 @@ module.exports = function(app) {
 		.get(magazines.read)
 		.put(users.requiresLogin, magazines.hasAuthorization, magazines.update)
 		.delete(users.requiresLogin, magazines.hasAuthorization, magazines.delete);
-
+		
 	// Finish by binding the Magazine middleware
 	app.param('magazineId', magazines.magazineByID);
 };
