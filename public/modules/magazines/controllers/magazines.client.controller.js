@@ -1,8 +1,8 @@
 'use strict';
 
 // Magazines controller
-angular.module('magazines').controller('MagazinesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Magazines', 'Articles',
-	function($scope, $stateParams, $location, Authentication, Magazines, Articles) {
+angular.module('magazines').controller('MagazinesController', ['$scope', '$stateParams', '$location','$http', 'Authentication', 'Magazines', 'Articles',
+	function($scope, $stateParams, $location,$http, Authentication, Magazines, Articles) {
 		$scope.authentication = Authentication;
 
 		// Create new Magazine
@@ -98,6 +98,26 @@ angular.module('magazines').controller('MagazinesController', ['$scope', '$state
 		$scope.find = function() {
 			$scope.magazines = Magazines.query();
 		};
+		
+		$scope.articleByMagazine = function() {
+		   $http.get('/api/articleByMagazine').success(function(response) {
+                // Show user success message and clear form
+                $scope.success = response.message;
+                console.log("entered");
+             
+                $scope.articleList = response;
+                  console.log(   $scope.articleList);
+              //  $scope.contact = '';
+
+            }).error(function(response) {
+                // Show user error message and clear form
+	console.log(response.message);
+                $scope.error = response.message;
+                $scope.contact = '';
+
+            });
+        };
+        	//$scope.articleByMagazine();
 
 		// Find existing Magazine
 		$scope.findOne = function() {

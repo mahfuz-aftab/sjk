@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('articles').controller('ArticlesController', ['$scope', '$sce', '$stateParams', '$rootScope', '$location', 'Authentication', 'Articles', 'Magazines',
-	function($scope,$sce, $stateParams, $rootScope, $location, Authentication, Articles, Magazines) {
+angular.module('articles').controller('ArticlesController', ['$scope', '$sce', '$stateParams', '$rootScope', '$location', '$http', 'Authentication', 'Articles', 'Magazines',
+	function($scope,$sce, $stateParams, $rootScope, $location, $http, Authentication, Articles, Magazines) {
 		$scope.authentication = Authentication;
 
 		$scope.create = function() {
@@ -55,35 +55,20 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$sce', '
 
 		$scope.find = function() {
 			$scope.articles = Articles.query();
-			
 			$scope.magazines = Magazines.query();
 		};
-
+		
+	
+		//	console.log ('Here');
+		
+//$scope.articleByMagazine();
 		$scope.findOne = function() {
 			$scope.article = Articles.get({
 				articleId: $stateParams.articleId
 			});
 			
-			
-			/*},function(data) {
-
-			});*/
-			
 			$scope.magazines = Magazines.query();
-			
-			//console.log('Hello'+ $scope.magazines);
 		};
-		
-	/*	$scope.open = function ($event) {
-
-            $scope.status.opened = true;
-        };
-
-
-        $scope.status = {
-            opened: false
-        };*/
-		
 	}
 ]);
 

@@ -89,7 +89,7 @@ exports.articleByMagazine = function(req, res) {
     [{
         "$group": {
           "_id": "$magazine",
-          "articleTitle": {"$push": "$title"}
+          "articleTitle": {"$push": { title: "$title", id: "$_id" }}
         }
     }],
     function(err, results) {
@@ -97,10 +97,17 @@ exports.articleByMagazine = function(req, res) {
 
       res.send(results);
     }
-
-
   )
-
+// Article.find().sort('-created').populate('magazine', 'name').exec(function(err, articles) {
+// 		if (err) {
+// 			return res.status(400).send({
+// 				message: errorHandler.getErrorMessage(err)
+// 			});
+// 		} else {
+// 			//console.log(articles);
+// 			res.json(articles);
+// 		}
+// 	});
 };
 
 /**

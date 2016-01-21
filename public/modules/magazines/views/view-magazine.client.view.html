@@ -1,4 +1,4 @@
-<section data-ng-controller="MagazinesController" data-ng-init="findOne()">
+<section data-ng-controller="MagazinesController" data-ng-init="findOne(); articleByMagazine()">
 	
 <!--	<div class="page-header">
 		<h1 data-ng-bind="magazine.name"></h1>
@@ -25,9 +25,16 @@
                             <p class="pull-left" data-ng-bind="magazine.yearNumber"></p>
                             <p class="pull-right" style="padding-right:10px; color: #000;" data-ng-bind="magazine.publishDate"></p>
                         </div>
-                            <p style="padding-top:20px; text-align:center; line-height: 1.8em;">
-                                <span class="magazineSummary" ng-bind-html="magazine.summary"></span>
-                            </p>
+                        
+                            
+                                <div ng-repeat= "articles in articleList | filter:magazine._id">
+                                 <div ng-repeat= "article in articles.articleTitle">
+                                    <a href="/#!/articles/{{article.id}}" style="padding-top:20px; text-align:center; line-height: 1.8em;">
+                                     
+                                <span class="magazineSummary" ng-bind-html="article.title">helloonew</span>
+                                </div>
+                                </div>
+                            </a>
                     </div>
                 </div>
     </div>
