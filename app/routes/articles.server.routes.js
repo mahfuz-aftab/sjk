@@ -18,8 +18,8 @@ module.exports = function(app) {
 		.delete(users.requiresLogin, articles.hasAuthorization, articles.delete);
 
 
-	app.route('/api/articleByMagazine')
-	.get(articles.articleByMagazine);
+	app.route('/api/articlesByMagazine')
+	.get(articles.articlesByMagazine);
 
 	// Finish by binding the article middleware
 	app.param('articleId', articles.articleByID);

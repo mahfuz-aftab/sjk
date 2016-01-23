@@ -99,25 +99,20 @@ angular.module('magazines').controller('MagazinesController', ['$scope', '$state
 			$scope.magazines = Magazines.query();
 		};
 		
-		$scope.articleByMagazine = function() {
-		   $http.get('/api/articleByMagazine').success(function(response) {
+		$scope.articlesByMagazine = function() {
+		   $http.get('/api/articlesByMagazine').success(function(response) {
                 // Show user success message and clear form
                 $scope.success = response.message;
-                console.log("entered");
-             
                 $scope.articleList = response;
-                  console.log(   $scope.articleList);
-              //  $scope.contact = '';
 
             }).error(function(response) {
                 // Show user error message and clear form
 	console.log(response.message);
                 $scope.error = response.message;
-                $scope.contact = '';
+            
 
             });
         };
-        	//$scope.articleByMagazine();
 
 		// Find existing Magazine
 		$scope.findOne = function() {

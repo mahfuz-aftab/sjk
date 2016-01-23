@@ -1,4 +1,4 @@
-<section data-ng-controller="MagazinesController" data-ng-init="findOne(); articleByMagazine()">
+<section data-ng-controller="MagazinesController" data-ng-init="findOne(); articlesByMagazine()">
 	
 <!--	<div class="page-header">
 		<h1 data-ng-bind="magazine.name"></h1>
@@ -27,11 +27,11 @@
                         </div>
                         
                             
-                                <div ng-repeat= "articles in articleList | filter:magazine._id">
-                                 <div ng-repeat= "article in articles.articleTitle">
+                                <div ng-repeat= "articlesByMagazine in articleList | filter:magazine._id">
+                                 <div ng-repeat= "article in articlesByMagazine.articleTitleNid">
                                     <a href="/#!/articles/{{article.id}}" style="padding-top:20px; text-align:center; line-height: 1.8em;">
                                      
-                                <span class="magazineSummary" ng-bind-html="article.title">helloonew</span>
+                                <span class="magazineSummary" ng-bind-html="article.title"></span>
                                 </div>
                                 </div>
                             </a>
