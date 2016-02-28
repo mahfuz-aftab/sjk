@@ -100,6 +100,23 @@ exports.articlesByMagazine = function(req, res) {
   )
 };
 
+exports.articlesByCategory = function(req, res) {
+
+  Article.aggregate(
+    [{
+        "$group": {
+          "_id": "$category",
+          "articleTitleNid": {"$push": { title: "$title", id: "$_id" }}
+        }
+    }],
+    function(err, results) {
+      if (err) throw err;
+
+      res.send(results);
+    }
+  )
+};
+
 /**
  * Article middleware
  */

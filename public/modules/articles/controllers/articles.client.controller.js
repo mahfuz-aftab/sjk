@@ -11,6 +11,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$sce', '
 				content: this.content,
 				imageURL: this.imageURL,
 				rImageUrl: this.rImageUrl,
+				category: this.category,
 				magazine: this.magazine
 			});
 			
@@ -52,16 +53,29 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$sce', '
 				$scope.error = errorResponse.data.message;
 			});
 		};
+		
+		$scope.articlesByCategory = function() {
+		   $http.get('/api/articlesByCategory').success(function(response) {
+                // Show user success message and clear form
+                $scope.success = response.message;
+                $scope.articleList = response;
+                console.log (response);
+
+            }).error(function(response) {
+                // Show user error message and clear form
+				 console.log(response);
+                $scope.error = response.message;
+            
+
+            });
+        };
 
 		$scope.find = function() {
 			$scope.articles = Articles.query();
 			$scope.magazines = Magazines.query();
 		};
 		
-	
-		//	console.log ('Here');
-		
-//$scope.articleByMagazine();
+
 		$scope.findOne = function() {
 			$scope.article = Articles.get({
 				articleId: $stateParams.articleId

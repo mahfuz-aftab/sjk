@@ -11,7 +11,8 @@ angular.module('magazines').controller('MagazinesController', ['$scope', '$state
 			var magazine = new Magazines ({
 				name: this.name,
 				summary: this.summary,
-				imageURL: this.imageURL,
+			//	imageURL: this.imageURL,
+				rImageUrl: this.rImageUrl,
 				yearNumber: this.yearNumber,
 				yearQuarter: this.yearQuarter,
 				publishDate: this.publishDate,

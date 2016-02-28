@@ -26,6 +26,11 @@ var ArticleSchema = new Schema({
 		//required: 'Please fill Article summary',
 		trim: true
 	},
+	category: {
+		type: String,
+		default: '',
+		trim: true
+	},
 	content: {
 		type: String,
 		default: '',

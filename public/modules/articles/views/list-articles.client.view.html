@@ -1,5 +1,5 @@
-<section data-ng-controller="ArticlesController" data-ng-init="find()">
-	        <div class="page-header row">
+<section data-ng-controller="ArticlesController" data-ng-init="find(); articlesByCategory()">
+	        <!--<div class="page-header row">
             <div class="col-sm-8 col-md-8">
                 <h1>Articles</h1>
             </div>
@@ -11,8 +11,41 @@
                </span>
             </div>
             
-        </div>
-	<div class="list-group">
+        </div>-->
+        
+        <div class="page-header">
+            <div class="row">
+            <div class="col-sm-6 col-md-6">
+                <h2>Articles</h2>
+            </div>
+            
+            <div class="col-sm-6 col-md-6">
+    <div class="list-group">
+        hello
+    </br>
+    
+    <a ng-repeat="articlesByCategory in articleList | filter : query" data-ng-href="/#!/articles/{{article.id}}" class="list-group-item">
+            <span>{{articlesByCategory._id}}</span>
+                  <div ng-repeat="article in articlesByCategory._id ">
+                      <a href="/#!/articles/{{article.id}}" style="padding-top:20px; text-align:center; line-height: 1.8em;">
+                          <span class="magazineSummary" ng-bind-html="article.title"></span>
+                      </a>
+                  </div>
+
+              </a>
+              </div>
+                <a data-ng-show="authentication.user" class="btn btn-primary addBtn pull-right" ng-href="#!/articles/create"><i class="glyphicon glyphicon-plus"></i>Article</a>
+  
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="query" placeholder="Search">
+                    <span class="input-group-btn">
+                     <button ng-click="search()" class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                   </span>
+                </div>
+            </div>
+            </div>
+            </div>
+        
 		<a data-ng-repeat="article in articles | filter : query" data-ng-href="#!/articles/{{article._id}}" class="list-group-item">
 		
 		  	<div>
@@ -26,6 +59,7 @@
 				<span data-ng-bind="article.user.displayName"></span>
 			</small>
 			<h4 class="list-group-item-heading" data-ng-bind="article.title"></h4>
+			{{article.category}}
 			<p class="list-group-item-text" ng-bind-html="parseArticleContent(article.content)"></p>
 		</a>
 	</div>
