@@ -59,6 +59,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$sce', '
                 // Show user success message and clear form
                 $scope.success = response.message;
                 $scope.articleList = response;
+                console.log('Category Response');
                 console.log (response);
 
             }).error(function(response) {
